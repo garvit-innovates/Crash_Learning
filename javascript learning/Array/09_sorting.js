@@ -2,6 +2,6 @@
 
 let nums = [2,69,3,8,6,45];
 
-console.log(nums.sort((a,b) => a-b ));
+console.log(nums.sort((a,b) => a-b )); // bubble sort 
 
 console.log(nums.sort((a,b) => b-a ));

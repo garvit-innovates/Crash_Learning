@@ -2,6 +2,14 @@
 
 let nums = [1,2,3,4,5];
 
-nums.map((num) => {
-    console.log(num * 2);
+let num1 = nums.map((num) => {
+    return num * 2 ;
 });
+
+let num2 = nums.forEach((num) => {
+    return num * 2 ;
+});
+
+console.log(nums);
+console.log(num1);
+console.log(num2);

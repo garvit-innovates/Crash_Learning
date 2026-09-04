@@ -6,4 +6,9 @@ let num = nums.find((num)=>{
     return num > 30
 });
 
+let num2 = nums.filter((num)=>{
+    return num > 30
+});
+
 console.log(num)
+console.log(num2)

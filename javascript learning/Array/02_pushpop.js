@@ -2,7 +2,9 @@
 
 let fruits = ["apple", "banana", "orange", "grapes"];
 
-fruits.push("kiwi");
-fruits.pop();
+console.log(fruits.push(1))
+
+// fruits.push("kiwi");
+// fruits.pop();
 
 console.log(fruits);
