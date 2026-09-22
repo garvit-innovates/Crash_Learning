@@ -14,7 +14,7 @@ class CartPage {
 
         // Each product in cart
         this.cartItems = page.locator('ul:has(h3)');
-
+        
         // Checkout button
         this.checkoutButton = page.getByRole('button', {
             name: /Checkout/i
