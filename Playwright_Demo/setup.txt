@@ -1,0 +1,11 @@
+// setup cmd for the playwright...
+npm init playwright@latest
+
+// run all test cases 
+npx playwright test
+
+// this cmd is used to see all test case reports 
+npx playwright show-report
+
+// run specific file of test case 
+npx playwright test tests/01-basic.spec.js --headed
