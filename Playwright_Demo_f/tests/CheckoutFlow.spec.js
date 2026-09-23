@@ -37,7 +37,7 @@ test('Validating checkout flow', async ({ page }) => {
     await checkoutPage.verifyPersonalInformation();
     await checkoutPage.verifyShippingInformation();
 
-const formData = checkoutFormData[0];
+    const formData = checkoutFormData[0];
     await checkoutPage.fillCardDetails(formData);
     await checkoutPage.verifyCardDetails(formData);
     await checkoutPage.selectCountry(formData.country,formData.countryName);
