@@ -4,6 +4,7 @@ const { CartPage } = require('../pages/CartPage');
 const { readExcelData } = require('../utils/excelUtils');
 const { CheckoutPage } = require('../pages/CheckoutPage');
 const checkoutFormData = require('../test_data/checkoutFormData.json');
+const { OrderConfirmationPage } = require('../pages/OrderConfirmationPage');
 const path = require('path');
 
 
@@ -13,6 +14,7 @@ test('Validating checkout flow', async ({ page }) => {
     const checkoutFlow = new CheckoutFlow(page);
     const cartPage = new CartPage(page);
     const checkoutPage = new CheckoutPage(page);
+    const orderConfirmationPage = new OrderConfirmationPage(page);
 
 
     await checkoutFlow.open();
@@ -44,4 +46,6 @@ test('Validating checkout flow', async ({ page }) => {
     await checkoutPage.verifyCountry(formData.countryName);
     await checkoutPage.verifyPlaceOrderButton();
     await checkoutPage.placeOrder();
+    await orderConfirmationPage.verifyThankYouMessage();
+    // await page.pause();
 });
