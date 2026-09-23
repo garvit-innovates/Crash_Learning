@@ -2,6 +2,8 @@ const { test } = require('@playwright/test');
 const { CheckoutFlow } = require('../pages/CheckoutFlow');
 const { CartPage } = require('../pages/CartPage');
 const { readExcelData } = require('../utils/excelUtils');
+const { CheckoutPage } = require('../pages/CheckoutPage');
+const checkoutFormData = require('../test_data/checkoutFormData.json');
 const path = require('path');
 
 
@@ -10,6 +12,7 @@ test.use({storageState: 'auth.json'});
 test('Validating checkout flow', async ({ page }) => {
     const checkoutFlow = new CheckoutFlow(page);
     const cartPage = new CartPage(page);
+    const checkoutPage = new CheckoutPage(page);
 
 
     await checkoutFlow.open();
@@ -30,5 +33,15 @@ test('Validating checkout flow', async ({ page }) => {
 
     await cartPage.verifyAllProducts(checkoutData);
     await cartPage.clickCheckout();
-    // await page.pause();
+    await checkoutPage.waitForPageLoad();
+    await checkoutPage.verifyPersonalInformation();
+    await checkoutPage.verifyShippingInformation();
+
+const formData = checkoutFormData[0];
+    await checkoutPage.fillCardDetails(formData);
+    await checkoutPage.verifyCardDetails(formData);
+    await checkoutPage.selectCountry(formData.country,formData.countryName);
+    await checkoutPage.verifyCountry(formData.countryName);
+    await checkoutPage.verifyPlaceOrderButton();
+    await checkoutPage.placeOrder();
 });
