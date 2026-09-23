@@ -1,34 +1,34 @@
+const { expect } = require('@playwright/test');
+
 class CheckoutFlow {
 
     constructor(page) {
         this.page = page;
-
-        // Products
         this.products = page.locator('section#products .card');
-
-        // Cart button
+        this.productsContainer = page.locator('#products .container');
         this.cartButton = page.locator('button[routerlink="/dashboard/cart"]');
+        this.cartContainer = page.locator('.cart');
     }
 
 
-    // Open dashboard
     async open() {
-        await this.page.goto('https://rahulshettyacademy.com/client/#/dashboard/dash');
+        await this.page.goto('https://rahulshettyacademy.com/client/#/dashboard/dash',{waitUntil: 'domcontentloaded'});
     }
 
 
-    // Get specific product
+    async verifyProductsContainer() {
+        await expect(this.productsContainer).toBeVisible();
+    }
+
+
     getProduct(productName) {
         return this.products.filter({hasText: productName});
     }
 
 
-    // Add product to cart according to quantity
     async addToCart(productName, quantity = 1) {
-
         const product = this.getProduct(productName);
 
-        // Verify product is available
         await product.waitFor({state: 'visible'});
 
         for (let i = 0; i < quantity; i++) {
@@ -36,9 +36,15 @@ class CheckoutFlow {
         }
     }
 
-    // Go to cart
+
     async goToCart() {
         await this.cartButton.click();
+        await this.cartContainer.waitFor({state: 'visible'});
+    }
+
+
+    async verifyCartContainer() {
+        await expect(this.cartContainer).toBeVisible();
     }
 }
 
