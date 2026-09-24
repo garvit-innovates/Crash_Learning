@@ -1,0 +1,29 @@
+{
+  "name": "playwright_demo_f",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --project=chromium-headed",
+    "test:headless": "npx playwright test --project=chromium-headless",
+    "test:login": "npx playwright test --grep @login",
+    "test:checkout": "npx playwright test --grep @checkout",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "test:smoke:headed": "npx playwright test --grep @smoke --project=chromium-headed",
+    "test:smoke:headless": "npx playwright test --grep @smoke --project=chromium-headless",
+    "cookie": "npx playwright test --grep @cookie --project=chromium-headless"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.2"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
