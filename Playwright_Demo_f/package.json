@@ -13,7 +13,7 @@
     "test:regression": "npx playwright test --grep @regression",
     "test:smoke:headed": "npx playwright test --grep @smoke --project=chromium-headed",
     "test:smoke:headless": "npx playwright test --grep @smoke --project=chromium-headless",
-    "cookie": "npx playwright test --grep @cookie --project=chromium-headless"
+    "cookie": "npx playwright test --grep @cookie --project=chromium-headed"
   },
   "keywords": [],
   "author": "",
