@@ -26,8 +26,7 @@ module.exports = defineConfig({
                 ...devices['Desktop Chrome'],
                 headless: false // npx playwright test --project=chromium-headed
             }
-        }
-        ,
+        },
         {
             name: 'chromium-headless',
             use: {

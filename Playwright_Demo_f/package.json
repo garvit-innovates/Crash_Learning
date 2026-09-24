@@ -11,9 +11,11 @@
     "test:checkout": "npx playwright test --grep @checkout",
     "test:smoke": "npx playwright test --grep @smoke",
     "test:regression": "npx playwright test --grep @regression",
+    "test:regression:headed": "npx playwright test --grep @regression --project=chromium-headed",
+    "test:cartmock:headed": "npx playwright test --grep @cartmock --project=chromium-headed",
     "test:smoke:headed": "npx playwright test --grep @smoke --project=chromium-headed",
     "test:smoke:headless": "npx playwright test --grep @smoke --project=chromium-headless",
-    "cookie": "npx playwright test --grep @cookie --project=chromium-headed"
+    "cookie": "npx playwright test --grep @cookie --project=chromium-headless"
   },
   "keywords": [],
   "author": "",

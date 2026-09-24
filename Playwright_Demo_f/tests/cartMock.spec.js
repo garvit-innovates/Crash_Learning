@@ -3,7 +3,7 @@ const CartMock = require('../pages/cartMock');
 
 test.use({storageState: 'auth.json'});
 
-test('Verify empty cart using API mocking', async ({ page }) => {
+test('Verify empty cart using API mocking',{ tag: '@cartmock' }, async ({ page }) => {
 
     const cartMock = new CartMock(page);
 
@@ -20,7 +20,7 @@ test('Verify empty cart using API mocking', async ({ page }) => {
     await product.getByRole('button', {name: 'Add To Cart'}).click();
 
     // 4. Stop execution
-    await page.pause();
+    // await page.pause();
 
     // 5. Now mock Cart APIs
     await cartMock.mockAllCartApis();
