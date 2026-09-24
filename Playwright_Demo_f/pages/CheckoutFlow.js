@@ -37,8 +37,21 @@ class CheckoutFlow {
     }
 
 
+    // async goToCart() {
+    //     await this.cartButton.click();
+    //     await this.cartContainer.waitFor({state: 'visible'});
+    // }
+
+
     async goToCart() {
+
+        const responsePromise = this.page.waitForResponse(response =>
+            response.url().includes('/api/ecom/user/get-cart-products/') &&
+            response.request().method() === 'GET'
+         );
         await this.cartButton.click();
+        const response = await responsePromise;
+        await expect([200, 304]).toContain(response.status());
         await this.cartContainer.waitFor({state: 'visible'});
     }
 

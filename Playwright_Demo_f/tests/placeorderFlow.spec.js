@@ -10,13 +10,14 @@ const path = require('path');
 
 test.use({storageState: 'auth.json'});
 
-test('Validating checkout flow', async ({ page }) => {
+test('Validating checkout flow',{ tag: ['@checkout', '@regression'] },async ({ page }) => {
+
     const checkoutFlow = new CheckoutFlow(page);
     const cartPage = new CartPage(page);
     const checkoutPage = new CheckoutPage(page);
     const orderConfirmationPage = new OrderConfirmationPage(page);
 
-
+    
     await checkoutFlow.open();
     await checkoutFlow.verifyProductsContainer();
 

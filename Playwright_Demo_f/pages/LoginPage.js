@@ -9,13 +9,10 @@ class LoginPage{
     }
 
     async tosterText() {
-        await this.toster.waitFor({ state: 'visible' });
+        await this.toster.waitFor({ state: 'visible', timeout: 10000 });
         return (await this.toster.innerText()).trim();
     }
 
-    async storeCookie(){
-        await this.page.context().storageState({ path: 'auth.json' });
-    }
 
     async containerVisible(){
         try{await this.page.locator('.container').waitFor({ state: 'visible' ,timeout:5000 });
