@@ -1,0 +1,29 @@
+[
+    {
+        "testName": "Valid Login",
+        "email": "garvitchugh66@gmail.com",
+        "password": "Test@1234",
+        "expectedResult": "success"
+    },
+    
+    {
+        "testName": "Invalid Email",
+        "email": "invalid@example.com",
+        "password": "Test@1234",
+        "expectedResult": "failure"
+    },
+    
+    {
+        "testName": "Invalid Password",
+        "email": "garvitchugh66@gmail.com",
+        "password": "WrongPassword123",
+        "expectedResult": "failure"
+    },
+    
+    {
+        "testName": "Invalid login",
+        "email": "garvit@gmail.com",
+        "password": "WrongPassword123",
+        "expectedResult": "failure"
+    }
+]
