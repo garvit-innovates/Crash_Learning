@@ -3,14 +3,39 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cucumber-js",
+    "test:headed": "npx playwright test --project=chromium-headed",
+    "test:headless": "npx playwright test --project=chromium-headless",
+    "test:login": "npx playwright test --grep @login",
+    "test:checkout": "npx playwright test --grep @checkout",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "test:regression:headed": "npx playwright test --grep @regression --project=chromium-headed",
+    "test:cartmock:headed": "npx playwright test --grep @cartmock --project=chromium-headed",
+    "test:smoke:headed": "npx playwright test --grep @smoke --project=chromium-headed",
+    "test:smoke:headless": "npx playwright test --grep @smoke --project=chromium-headless",
+    "cookie": "npx playwright test --grep @cookie --project=chromium-headless",
+    "test:cucumber": "cucumber-js",
+    "test:cucumber:smoke": "cucumber-js -p smoke",
+    "test:cucumber:regression": "cucumber-js -p regression",
+    "test:cucumber:login": "cucumber-js --tags @login",
+    "test:cucumber:checkout": "cucumber-js --tags @checkout",
+    "test:cucumber:cartmock": "cucumber-js --tags @cartmock",
+    "test:cucumber:cookie": "cucumber-js --tags @cookie",
+    "test:playwright": "playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
     "@playwright/test": "^1.64.0",
-    "@types/node": "^26.6.5"
+    "@types/node": "^26.6.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "xlsx": "^0.18.5"

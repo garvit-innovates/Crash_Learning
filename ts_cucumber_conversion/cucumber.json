@@ -1,0 +1,55 @@
+{
+  "default": {
+    "requireModule": ["tsx"],
+    "require": [
+      "features/support/**/*.ts",
+      "features/step_definitions/**/*.ts"
+    ],
+    "paths": [
+      "features/**/*.feature"
+    ],
+    "format": [
+      "summary",
+      "html:reports/cucumber-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    }
+  },
+  "smoke": {
+    "requireModule": ["tsx"],
+    "require": [
+      "features/support/**/*.ts",
+      "features/step_definitions/**/*.ts"
+    ],
+    "paths": [
+      "features/**/*.feature"
+    ],
+    "tags": "@smoke",
+    "format": [
+      "summary",
+      "html:reports/cucumber-smoke-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    }
+  },
+  "regression": {
+    "requireModule": ["tsx"],
+    "require": [
+      "features/support/**/*.ts",
+      "features/step_definitions/**/*.ts"
+    ],
+    "paths": [
+      "features/**/*.feature"
+    ],
+    "tags": "@regression",
+    "format": [
+      "summary",
+      "html:reports/cucumber-regression-report.html"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    }
+  }
+}
