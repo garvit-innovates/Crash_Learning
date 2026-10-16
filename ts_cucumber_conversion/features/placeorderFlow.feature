@@ -1,7 +1,6 @@
 @checkout @regression @authenticated
 Feature: End-to-End Order Placement Flow
 
-
   Scenario: Place an order successfully with products from Excel test data
     Given the user is on the dashboard page
     And the products container is visible
