@@ -1,0 +1,4 @@
+testName,email,password
+Invalid Email,invalid@example.com,Test@1234
+Invalid Password,garvitchugh66@gmail.com,WrongPassword123
+Invalid login,garvit@gmail.com,WrongPassword123

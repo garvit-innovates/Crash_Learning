@@ -1,3 +1,4 @@
+
 {
   "default": {
     "requireModule": ["tsx"],
@@ -5,12 +6,11 @@
       "features/support/**/*.ts",
       "features/step_definitions/**/*.ts"
     ],
-    "paths": [
-      "features/**/*.feature"
-    ],
+    "paths": ["features/**/*.feature"],
     "format": [
       "summary",
-      "html:reports/cucumber-report.html"
+      "html:reports/cucumber-report.html",
+      "allure-cucumberjs/reporter"
     ],
     "formatOptions": {
       "snippetInterface": "async-await"
@@ -22,13 +22,12 @@
       "features/support/**/*.ts",
       "features/step_definitions/**/*.ts"
     ],
-    "paths": [
-      "features/**/*.feature"
-    ],
+    "paths": ["features/**/*.feature"],
     "tags": "@smoke",
     "format": [
       "summary",
-      "html:reports/cucumber-smoke-report.html"
+      "html:reports/cucumber-smoke-report.html",
+      "allure-cucumberjs/reporter"
     ],
     "formatOptions": {
       "snippetInterface": "async-await"
@@ -40,13 +39,12 @@
       "features/support/**/*.ts",
       "features/step_definitions/**/*.ts"
     ],
-    "paths": [
-      "features/**/*.feature"
-    ],
+    "paths": ["features/**/*.feature"],
     "tags": "@regression",
     "format": [
       "summary",
-      "html:reports/cucumber-regression-report.html"
+      "html:reports/cucumber-regression-report.html",
+      "allure-cucumberjs/reporter"
     ],
     "formatOptions": {
       "snippetInterface": "async-await"
